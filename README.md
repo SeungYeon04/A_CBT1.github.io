@@ -16,3 +16,4 @@ Github url:
 자격증 문제 풀이용  
 
 ## 🖼 플레이 사진
+![스크린샷 2024-05-28 011053](https://github.com/SeungYeon04/A_CBT1.github.io/assets/100332811/2acc9126-42af-4526-958c-8e9d1b6cfb64)
