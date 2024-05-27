@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(255, 234, 234);
+    font-family: 'omyu_pretty';
+}
+
+/*오뮤다예쁨체*/
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.button {
+    font-family: 'omyu_pretty';
+}
