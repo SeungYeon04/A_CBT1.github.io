@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="all.css" rel="stylesheet">
+    <title>CBT</title>
+</head>
+<body>
+    <div class="Box">
+    문제<br>
+    <br>다음 중 스캐너 사용과 관련된 프로그램으로 알맞은 것은?<br>
+    <br>
+    <hr>
+    <br>
+    <form>
+        1번: ALSA<input type ="radio" name="answer" value="1"><br>
+        2번: CUPS<input type ="radio" name="answer" value="2"><br>
+        3번: SANE<input type ="radio" name="answer" value="3"><br>
+        4번: LPRng<input type ="radio" name="answer" value="4"><br>
+    <br>
+    <input type="button" class="button" value="정답" onclick="jd()">
+    <input type="button" class="button" value="다음">
+    <input type="button" class="button" value="해설" onclick="hs()"><br>
+    <br>
+    <a id="hs"></a>
+    <a id="jd"></a>
+    </form>
+    </div>
+    <form style="margin-left: 100px;">
+        <input type="button" class="button" value="처음으로" onclick="location.href='index.html'">
+    </form>
+    <br>
+</body>
+<script>
+function hs()
+{
+    const hs = document.getElementById('hs');
+    hs.innerHTML = '해설: ALSA: 스피커, CUPS 프린터, SANE 스캐너, LPRng 스피커 <br>(스캐너 프로그램은 앞글자 S인 경우 많음)<br>'; // innerHTML 사용
+}
+
+function jd()
+{
+    const a = document.querySelector('input[name="answer"]:checked').value;
+    const b = '3'; 
+
+    if (a === b) {
+        alert('정답입니다!');
+    } else {
+        alert('오답입니다.');
+    }
+
+    const jd = document.getElementById('jd');
+    jd.innerHTML = '정답: 3. SANE<br>'; // innerHTML 사용
+}
+</script>
+</html>
