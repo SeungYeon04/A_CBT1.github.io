@@ -9,16 +9,20 @@
 <body>
     <div class="Box">
     문제<br>
-    <br>다음 중 rpm명령으로 의존성 있는 패키지를 <br>
-    제거하는 명령으로 알맞은 것은?<br>
+    <br>다음 설명에 해당하는 명령으로 알맞은 것은?<br>
+    <br>
+    <div class="textnemo">
+        소스파일의 압축을 푼 디렉터리에서 <br>
+        한 번 작업한 설정이나 관련 파일을 다시 설정 작업 할 때 사용한다.<br>
+    </div>
     <br>
     <hr>
     <br>
     <form>
-        1번: rpm -d nmap --nodeps<input type ="radio" name="answer" value="1"><br>
-        2번: rpm -e nmap --nodeps<input type ="radio" name="answer" value="2"><br>
-        3번: rpm erase nmap --nodeps<input type ="radio" name="answer" value="3"><br>
-        4번: rpm delete nmap --nodeps<input type ="radio" name="answer" value="4"><br>
+        1번: make init<input type ="radio" name="answer" value="1"><br>
+        2번: make zero<input type ="radio" name="answer" value="2"><br>
+        3번: make clean<input type ="radio" name="answer" value="3"><br>
+        4번: make neat<input type ="radio" name="answer" value="4"><br>
     <br>
     <input type="button" class="button" value="정답" onclick="jd()">
     <input type="button" class="button" value="다음">
@@ -37,13 +41,13 @@
 function hs()
 {
     const hs = document.getElementById('hs');
-    hs.innerHTML = '해설: --nodeps = 의존성 패키지 제거, -e = rpm의 패키지 제거옵션<br>'; // innerHTML 사용
+    hs.innerHTML = '해설: make clean 그 이외의 다른 옵션은 정규화X<br>'; // innerHTML 사용
 }
 
 function jd()
 {
     const a = document.querySelector('input[name="answer"]:checked').value;
-    const b = '2'; 
+    const b = '3'; 
 
     if (a === b) {
         alert('정답입니다!');
@@ -52,7 +56,7 @@ function jd()
     }
 
     const jd = document.getElementById('jd');
-    jd.innerHTML = '정답: 2. rpm -e nmap --nodeps<br>'; // innerHTML 사용
+    jd.innerHTML = '정답: 3. make clean<br>'; // innerHTML 사용
 }
 </script>
 </html>
