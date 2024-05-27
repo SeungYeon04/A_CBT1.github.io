@@ -11,6 +11,17 @@ body {
     font-style: normal;
 }
 
+.Box {
+    margin-left: 100px; margin-right: 100px; margin-top: 30px; margin-bottom: 30px;
+    border: 1px solid; padding-bottom:  100px; padding-left: 10px; padding-right: 10px;
+}
+
 .button {
     font-family: 'omyu_pretty';
+}
+
+.textnemo {
+    background-color: white;
+    padding: 10px;
+
 }

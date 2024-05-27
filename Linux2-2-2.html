@@ -7,17 +7,17 @@
     <title>CBT</title>
 </head>
 <body>
-    <div style="margin: 100px; border: 1px solid; padding-bottom: 400px; padding-left: 10px;">
+    <div class="Box">
     문제<br>
-    <br>다음 중 LVM 구성할 때 가장 먼저 생성되는 것은?<br>
+    <br>다음 중 프린터 큐의 작업정보를 확인하는 명령어로 알맞은 것은?<br>
     <br>
     <hr>
     <br>
     <form>
-        1번: VG<input type ="radio" name="answer" value="1"><br>
-        2번: LV<input type ="radio" name="answer" value="2"><br>
-        3번: PV<input type ="radio" name="answer" value="3"><br>
-        4번: PE<input type ="radio" name="answer" value="3"><br>
+        1번: lp<input type ="radio" name="answer" value="1"><br>
+        2번: lpr<input type ="radio" name="answer" value="2"><br>
+        3번: lprm<input type ="radio" name="answer" value="3"><br>
+        4번: lpstat<input type ="radio" name="answer" value="4"><br>
     <br>
     <input type="button" class="button" value="정답" onclick="jd()">
     <input type="button" class="button" value="다음">
@@ -27,27 +27,31 @@
     <a id="jd"></a>
     </form>
     </div>
+    <form style="margin-left: 100px;">
+        <input type="button" class="button" value="처음으로" onclick="location.href='index.html'">
+    </form>
+    <br>
 </body>
 <script>
 function hs()
 {
     const hs = document.getElementById('hs');
-    hs.innerHTML = '해설: PV-VG-LV (PE는 LVM 순서도 아님)<br>'; // innerHTML 사용
+    hs.innerHTML = '해설: 프린트큐 확인: lpq, lpstat<br>'; // innerHTML 사용
 }
 
 function jd()
 {
     const a = document.querySelector('input[name="answer"]:checked').value;
-    const b = '3'; 
+    const b = '4'; 
 
     if (a === b) {
         alert('정답입니다!');
     } else {
-        alert('오답입니다. 정답은 3번입니다.');
+        alert('오답입니다.');
     }
 
     const jd = document.getElementById('jd');
-    jd.innerHTML = '정답: 3. PV<br>'; // innerHTML 사용
+    jd.innerHTML = '정답: 4. lpstat<br>'; // innerHTML 사용
 }
 </script>
 </html>
