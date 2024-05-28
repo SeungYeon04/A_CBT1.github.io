@@ -1,5 +1,5 @@
 ## 🔗 페이지 URL 
-Github url: 
+Github url: https://seungyeon04.github.io/A_CBT1.github.io/
 
 ## 🖥 프로젝트 소개 
 
