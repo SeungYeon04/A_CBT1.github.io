@@ -27,7 +27,6 @@
         상태변경 기준으로 정렬하고 상세정보표시<br>
         <br>
         <h3>사용자권한</h3>
-        <br>
         권한비트<br>
         r: 읽기권환<br>
         w: 쓰기권한<br>
@@ -67,6 +66,123 @@
         chown newuser:newgroup a.txt = <br>
         a.txt파일의 소유권 사용자 newuser <br>
         그룹사용자newgroup으로 변경<br>
+        <br>
+        <h3>응답 있는 없는 프로토콜</h3>
+        TCP = 연결 후 응답<br>
+        UDP = 연결 지향적인 TCP와 달리, 비연결형 프로토콜입니다. 즉, <br>
+        데이터그램을 보내고 받지만 수신 확인 재전송이 없습니다<br>
+        <br>
+        IP (Internet Protocol): 네트워크 계층 프로토콜로 데이터 패킷을 전송하는 데 사용<br>
+        UDP (User Datagram Protocol): 전송 계층 프로토콜로, 비연결형 데이터그램 서비스<br>
+        TCP (Transmission Control Protocol): 전송 계층 프로토콜로, 연결 지향형 서비스<br>
+        ICMP (Internet Control Message Protocol): 네트워크 계층 프로토콜로, 네트워크 진단 및 오류 메시지 전송<br>
+        ARP (Address Resolution Protocol): IP 주소를 물리적 MAC 주소로 변환<br>
+        <br>
+        <h3>클러스터 종류</h3>
+        <h4>고가용성 클러스터 (High Availability Cluster)</h4>
+        목적: 시스템의 가용성을 높여 서버 장애 시에도 서비스를 지속적으로 제공.<br>
+        구성: 두 대 이상의 서버가 서로를 모니터링하고, 한 서버가 장애가 발생하면 다른 서버가 이를 감지하고 서비스를 이어받음.<br>
+        예: Pacemaker, Heartbeat.<br>
+        <br>
+        <h4>부하 분산 클러스터 (Load Balancing Cluster)</h4>
+        목적: 여러 서버에 트래픽을 분산시켜 서버의 과부하를 방지하고 응답 시간을 줄임.<br>
+        구성: 여러 대의 서버 앞에 로드 밸런서를 두어 트래픽을 분산.<br>
+        예: HAProxy, Nginx.<br>
+        <br>
+        <h4>고성능 컴퓨팅 클러스터 (High Performance Computing Cluster)</h4>
+        목적: 병렬처리 능력을 향상시켜 대규모 계산 작업을 효율적으로 수행.<br>
+        구성: 여러 대의 컴퓨터가 병렬로 작업을 분할하여 처리.<br>
+        예: Apache Hadoop, OpenMPI.<br>
+        <br>
+        <h4>스토리지 클러스터 (Storage Cluster)</h4>
+        목적: 데이터의 고가용성과 확장성을 제공.<br>
+        구성: 여러 대의 서버가 스토리지 자원을 공유하여 데이터 분산 저장.<br>
+        예: Ceph, GlusterFS.<br>
+        <br>
+        <h4>베어울프 클러스터 (Beowulf Cluster)</h4>
+        설명: 오픈 소스 소프트웨어를 사용하여 저비용으로 구성할 수 있는 고성능 컴퓨팅 클러스터.<br>
+        특징: 일반적인 PC 하드웨어를 네트워크로 연결하여 병렬 컴퓨팅을 수행.<br>
+        사용 예: 과학 계산, 시뮬레이션, 데이터 분석.<br>
+        <br>
+        <h3>프린터 관련</h3>
+        <h4>CUPS (Common Unix Printing System)</h4>
+        설명: 유닉스 계열 시스템에서 프린터를 관리하고 인쇄 작업을 처리하는 시스템.<br>
+        기능: 프린터 설치 및 관리, 인쇄 작업 큐 관리, 다양한 프린터 드라이버 지원, 네트워크 프린터 지원.<br>
+        <h4>PPD (PostScript Printer Description)</h4>
+        설명: 프린터의 기능과 옵션을 기술하는 파일 형식.<br>
+        기능: 특정 프린터 모델의 정확한 인쇄 설정을 제공, 프린터 옵션 및 기능 정의.<br>
+        <h4>IPP (Internet Printing Protocol)</h4>
+        설명: 인터넷을 통해 프린터에 인쇄 작업을 전송하고 관리하기 위한 프로토콜.<br>
+        기능: 프린터 상태 조회, 인쇄 작업 제출 및 관리.<br>
+        <br>
+        <h3>스캐너 관련</h3>
+        <h4>SANE (Scanner Access Now Easy)</h4>
+        설명: 유닉스 계열 시스템에서 스캐너와 같은 이미지 캡처 장치를 위한 API.<br>
+        기능: 스캐너 드라이버 관리, 스캔 작업 처리.<br>
+        <h4>TWAIN</h4>
+        설명: 이미지 스캐너와 소프트웨어 간의 통신을 위한 표준 API.<br>
+        기능: 스캐너와 이미지 처리 소프트웨어의 통합.<br>
+        관련성: 주로 Windows와 macOS에서 사용.<br>
+        <br>
+        <h3>오디오 관련</h3>
+        <h4>ALSA (Advanced Linux Sound Architecture)</h4>
+        설명: 리눅스에서 오디오 장치를 관리하기 위한 소프트웨어 프레임워크.<br>
+        기능: 사운드 카드 드라이버 제공, 오디오 스트림 관리.<br>
+        <h4>PulseAudio</h4>
+        설명: 리눅스 및 기타 유닉스 계열 운영체제에서 사용하는 사운드 서버.<br>
+        기능: 오디오 스트림 라우팅, 믹싱, 네트워크 오디오 지원.<br>
+        <h3>공통 네트워크 프로토콜</h3>
+        <h4>SNMP (Simple Network Management Protocol)</h4>
+        설명: 네트워크 장치를 관리하고 모니터링하기 위한 인터넷 표준 프로토콜.<br>
+        기능: 네트워크 프린터와 같은 장치의 상태 모니터링 및 관리.<br>
+        <h4>SLP (Service Location Protocol)</h4>
+        설명: 네트워크 상의 장치를 자동으로 발견하고 사용할 수 있게 하는 프로토콜.<br>
+        기능: 네트워크 프린터와 같은 장치를 쉽게 찾고 설정.<br>
+        관련성: 다양한 네트워크 서비스 및 장치의 자동 발견에 사용.<br>
+        <br>
+        <h3>tar 명령어 사용법</h3>
+        tar -cvf archive.tar a.txt = a.txt 파일을 tar 아카이브로 만들기<br>
+        tar -czvf archive.tar.gz a.txt = a.txt 파일을 gzip으로 압축된 tar 아카이브로 만들기<br>
+        <br>
+        tar -xvf archive.tar = archive.tar 아카이브 파일 해제하기<br>
+        tar -xzvf archive.tar.gz = archive.tar.gz 압축된 아카이브 파일 해제하기<br>
+        tar -xzvf archive.tar.gz -C /path/to/directory = 특정 디렉터리에 archive.tar.gz 압축 해제하기<br>
+        <h4>주요 tar 명령어 옵션</h4>
+        -c: 새로운 아카이브를 생성합니다 (create).<br>
+        -x: 아카이브를 해제합니다 (extract).<br>
+        -f: 아카이브 파일 이름을 지정합니다 (file).<br>
+        -v: 진행 상황을 화면에 출력합니다 (verbose).<br>
+        -z: gzip 압축을 사용하거나 해제합니다 (gzip).<br>
+        -j: bzip2 압축을 사용하거나 해제합니다 (bzip2).<br>
+        -J: xz 압축을 사용하거나 해제합니다 (xz).<br>
+        -C: 지정된 디렉터리로 변경합니다 (change to directory).<br>
+        -t: 아카이브 내용을 나열합니다 (list).<br>
+        <br>
+        <h3>시간 정하기</h3>
+        <h4>분 시 날 달 주 (파일)</h4>
+        매주 목요일 오전 2시 10분에 스크립트 실행:<br>
+        10 2 * * 4 /path/to/script.sh<br>
+        10: 매시 10분.<br>
+        2: 오전 2시.<br>
+        *: 모든 날.<br>
+        *: 모든 달.<br>
+        4: 목요일 (요일은 0부터 6까지, 0과 7은 일요일).<br>
+        <br>
+        매주 월요일과 수요일 오후 4시 20분에 스크립트 실행:<br>
+        20 16 * * 1,3 /path/to/script.sh<br>
+        20: 매시 20분.<br>
+        16: 오후 4시.<br>
+        *: 모든 날.<br>
+        *: 모든 달.<br>
+        1,3: 월요일과 수요일.<br>
+        <br>
+        매년 1월 1일 오전 5시 45분에 스크립트 실행:<br>
+        45 5 1 1 * /path/to/script.sh<br>
+        45: 매시 45분.<br>
+        5: 오전 5시.<br>
+        1: 1일.<br>
+        1: 1월.<br>
+        *: 모든 요일.<br>
         <br>
     </div>
 </body>
