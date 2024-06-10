@@ -11,7 +11,7 @@
     <div class="Box">
         <br>
         <br>
-        ls 뒤에 명령어 설명<br>
+        <h3>ls 명령어</h3>
         ls -c = 파일의 상태 변경시간을 기준으로 정렬하거나 표시<br>
         ls -s = 파일의 블록 크기를 표시<br>
         ls -l = 파일에 대한 상세 정보를 표시합니다.<br>
@@ -26,7 +26,12 @@
         ls -lact = 숨김파일을 포함한 모든 파일을 <br>
         상태변경 기준으로 정렬하고 상세정보표시<br>
         <br>
-        <h3>사용자권한</h3>
+        <h3>사용자권한과 보안설정</h3>
+        SSH설정<br>
+        - SSH를 설정하고 서버에 복사하는 명령어 - <br>
+        ssh-keygen -t rsa<br>
+        ssh-copy-id user@server<br>
+        <br>
         권한비트<br>
         r: 읽기권환<br>
         w: 쓰기권한<br>
@@ -158,7 +163,7 @@
         -C: 지정된 디렉터리로 변경합니다 (change to directory).<br>
         -t: 아카이브 내용을 나열합니다 (list).<br>
         <br>
-        <h3>시간 정하기</h3>
+        <h3>스크립팅 및 자동화(시간 정하기)</h3>
         <h4>분 시 날 달 주 (파일)</h4>
         매주 목요일 오전 2시 10분에 스크립트 실행:<br>
         10 2 * * 4 /path/to/script.sh<br>
@@ -184,6 +189,175 @@
         1: 1월.<br>
         *: 모든 요일.<br>
         <br>
+        <h3>LVM 순서</h3>
+        PV-VG-LV (PE는 LVM 순서도 아님)<br>
+        <br>
+        <h3>사용자 및 그룹관리</h3>
+        사용자관리: <br>
+        usedadd -m newuser = 사용자추가 홈디렉터리생성<br>
+        userdel -r newuser = 사용자삭제 홈디렉터리삭제<br>
+        <br>
+        그룹관리: <br>
+        groupadd newgroup = newgroup 그룹 추가<br>
+        groupdel newgroup = newgroup 그룹 삭제<br>
+        usermod -aG newgroup newuser = 사용자를 특정 그룹에 추가<br>
+        <br>
+        <h3>디스크 사용량 확인</h3>
+        df -h = 디스크 사용량 확인<br>
+        du -sh /path/to/directory = 특정디렉터리디스트사용량확인<br>
+        <br>
+        <h3>OSI 계층</h3>
+        <img src="OSI참조.png"><br>
+        <br>
+        <h3>System V init에서의 런레벨</h3>
+        런레벨 0: 시스템 종료 (halt)<br>
+        시스템을 안전하게 종료합니다.<br>
+        명령어: shutdown -h now 또는 init 0<br>
+        런레벨 1: 단일 사용자 모드 (single-user mode)<br>
+        <br>
+        루트 사용자만 로그인할 수 있으며, 네트워크 서비스나 일반 사용자 서비스는 실행되지 않습니다.<br>
+        주로 시스템 복구 또는 유지보수 시 사용.<br>
+        명령어: init 1<br>
+        런레벨 2: 다중 사용자 모드 (multi-user mode, 네트워크 없음)<br>
+        <br>
+        여러 사용자가 로그인할 수 있으나 네트워크 서비스를 시작하지 않습니다.<br>
+        명령어: init 2<br>
+        <br>
+        런레벨 3: 다중 사용자 모드 (multi-user mode with networking)<br>
+        네트워크 서비스를 포함한 일반적인 다중 사용자 모드.<br>
+        대부분의 서버 환경에서 사용하는 기본 런레벨.<br>
+        명령어: init 3<br>
+        <br>
+        런레벨 4: 예약된 런레벨 (사용자 정의)<br>
+        사용자가 원하는 대로 커스터마이즈할 수 있는 런레벨.<br>
+        일반적으로 사용되지 않습니다.<br>
+        명령어: init 4<br>
+        <br>
+        런레벨 5: 다중 사용자 모드 (multi-user mode with networking and GUI)<br>
+        네트워크 서비스와 함께 GUI 데스크탑 환경을 제공하는 다중 사용자 모드.<br>
+        데스크탑 환경에서 기본적으로 사용하는 런레벨.<br>
+        명령어: init 5<br>
+        <br>
+        런레벨 6: 시스템 재부팅 (reboot)<br>
+        시스템을 재부팅합니다.<br>
+        명령어: shutdown -r now 또는 init 6<br>
+        <br>
+        runlevel = 런레벨확인 (결과 예시: N 3)<br>
+        init 3 = 런레벨 변경<br>
+        <br>
+        <h3>systemd에서의 타겟 (Targets)</h3>
+        systemd에서는 런레벨 대신 타겟(target)이라는 개념을 씀. <br>
+        시스템 상태를 정의하며, 런레벨과 유사한 역할을 합니다.<br>
+        <br>
+        runlevel0.target: 시스템 종료 (halt)<br>
+        runlevel1.target: 단일 사용자 모드 (rescue.target)<br>
+        runlevel2.target: 다중 사용자 모드 (multi-user.target, 네트워크 없음)<br>
+        runlevel3.target: 다중 사용자 모드 (multi-user.target, 네트워크 포함)<br>
+        runlevel4.target: 예약된 타겟 (multi-user.target)<br>
+        runlevel5.target: 다중 사용자 모드 (graphical.target, 네트워크 및 GUI 포함)<br>
+        runlevel6.target: 시스템 재부팅 (reboot.target)<br>
+        <br>
+        문제 예시: 현재 시스템의 기본 타겟을 확인하는 명령어는 무엇인가?<br> 
+        systemctl get-default = 현재 타겟 확인 <br>
+        문제 예시: 시스템의 기본 타겟을 multi-user.target으로 설정하는 명령어는 무엇인가?<br> 
+        sudo systemctl set-default multi-user.target = 타겟 변경<br>
+        문제 예시: 현재 활성화된 타겟 목록을 조회하는 명령어는 무엇인가?<br>
+        systemctl list-units --type=target = 타킷목록조회<br>
+        <br>
+        <h3>LibreOffice</h3>
+        설명: LibreOffice는 오픈 소스 오피스 제품<br>
+        Microsoft Office와 유사한 기능을 제공.<br>
+        명령: sudo apt-get install openoffice<br>
+        <br>
+        <h4>
+        Writer: 워드 프로세서 (MS Word 대안)<br>
+        Calc: 스프레드시트 애플리케이션 (MS Excel 대안)<br>
+        Impress: 프레젠테이션 소프트웨어 (MS PowerPoint 대안)<br>
+        Draw: 벡터 그래픽스 편집기<br>
+        Base: 데이터베이스 관리 시스템<br>
+        Math: 수식 편집기</h4>
+        <br>
+        <h3>WPS Office</h3>
+        설명: WPS Office는 Kingsoft에서 개발한 오피스 제품<br>
+        Microsoft Office와 호환성 높음.<br>
+        명령: sudo snap install wps-office<br>
+        <br>
+        <h4>
+        Writer: 워드 프로세서<br>
+        Spreadsheets: 스프레드시트 애플리케이션<br>
+        Presentation: 프레젠테이션 소프트웨어</h4>
+        <br>
+        <h3>리눅스에서 사용 가능한 텍스트 편집기</h3>
+        <h4>Vim</h4>
+        설명: Vim은 강력한 텍스트 편집기로, 명령 모드와 편집 모드를 지원합니다.
+        명령어: sudo apt-get install vim<br>
+        <h4>Emacs</h4>
+        설명: Emacs는 확장 가능하고 커스터마이즈 가능한 텍스트 편집기입니다.<br>
+        명령어: sudo apt-get install emacs<br>
+        <h4>Nano</h4>
+        설명: Nano는 간단하고 사용하기 쉬운 텍스트 편집기입니다.<br>
+        명령어: sudo apt-get install nano<br>
+        <br>
+        <h3>리눅스에서 사용 가능한 기타 생산성 도구</h3>
+        <h4>GIMP (GNU Image Manipulation Program)</h4>
+        설명: GIMP는 강력한 오픈 소스 이미지 편집 소프트웨어입니다.<br>
+        명령어: sudo apt-get install gimp<br>
+        <br>
+        <h4>Inkscape</h4>
+        설명: Inkscape는 오픈 소스 벡터 그래픽스 편집기입니다.<br>
+        명령어: sudo apt-get install inkscape<br>
+        <br>
+        <h4>Evolution</h4>
+        설명: Evolution은 이메일 클라이언트이자 일정 관리 도구, <br>
+        Microsoft Outlook과 유사한 기능을 제공.<br>
+        명령어: sudo apt-get install evolution<br>
+        <br>
+        <h4>Thunderbird</h4>
+        설명: Thunderbird는 Mozilla에서 개발한 <br>
+        오픈 소스 이메일 클라이언트.<br>
+        명령어: sudo apt-get install thunderbird<br>
+        <br>
+        <h4>특수목적접근모드(SetUID, SetGID, sticky bit)</h4>
+        파일의 소유자, root사용자 설정 가능<br>
+        (일반사용자는 불가능) <br>
+        <br>
+        <h3>파일 시스템별 크기</h3>
+        ext2 (Extended File System 2)<br>
+        비트 수: 32비트<br>
+        최대 파일 크기: 16 테라바이트 (TB)<br>
+        최대 파일 시스템 크기: 32 테라바이트 (TB)<br>
+        특징: 저널링을 지원하지 않으며, 비교적 간단한 구조를 가집니다.<br>
+        <br>
+        ext3 (Extended File System 3)<br>
+        비트 수: 32비트<br>
+        최대 파일 크기: 2 테라바이트 (TB)<br>
+        최대 파일 시스템 크기: 16 테라바이트 (TB)<br>
+        특징: ext2의 확장판으로 저널링 기능이 추가되었습니다.<br>
+        <br>
+        ext4 (Extended File System 4)<br>
+        비트 수: 64비트<br>
+        최대 파일 크기: 16 테라바이트 (TB)<br>
+        최대 파일 시스템 크기: 1 엑사바이트 (EB)<br>
+        특징: 성능 향상, 큰 파일 및 파일 시스템 지원, 저널링 기능, 연속 할당 등의 고급 기능을 갖추고 있습니다.<br>
+        <br>
+        XFS<br>
+        비트 수: 64비트<br>
+        최대 파일 크기: 8 엑사바이트 (EB)<br>
+        최대 파일 시스템 크기: 8 엑사바이트 (EB)<br>
+        특징: 고성능 64비트 저널링 파일 시스템으로, <br>
+        고성능과 확장성에 중점을 두고 설계되었습니다.<br>
+        <br>
+        <h4>요약</h4>
+        ext2: 32비트, 최대 파일 크기 16TB, 최대 파일 시스템 크기 32TB<br>
+        ext3: 32비트, 최대 파일 크기 2TB, 최대 파일 시스템 크기 16TB<br>
+        ext4: 64비트, 최대 파일 크기 16TB, 최대 파일 시스템 크기 1EB<br>
+        XFS: 64비트, 최대 파일 크기 8EB, 최대 파일 시스템 크기 8EB<br>
+        <br>
+        크기: (큼) XFS > ext4 > ext2 > ext3 (작음)<br>
+        <br>
     </div>
+    <form style="margin-left: 10%;">
+        <input type="button" class="button" value="처음으로" onclick="location.href='index.html'">
+    </form>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="all.css" rel="stylesheet">
+    <title>CBT</title>
+    <script src="L2-2.js"> </script>
+</head>
+<body>
+    <div class="Box">
+        <br>
+        <h3>시스템 부팅 및 초기화 + GRUB설정 업데이트</h3>
+        (GRUB) 부트로더 설정<br>
+        문제: GRUB2의 설정파일을 수정하여<br>
+        기본부팅항목을 변경하는 법을 설명하세요<br>
+        <br>
+        설명: <br>
+        a. GRUB 설정 파일을 엽니다.<br>
+        sudo nano /etc/default/grub<br>
+        <br>
+        b. GRUB_DEFAULT 항목을 수정하여<br>
+        원하는 부팅 항목으로 변경<br>
+        GRUB_DEFAULT=0<br>
+        <br>
+        c. 변경사항 저장하고 나옴<br>
+        <br>
+        d. GRUB 설정을 업데이트하여 변경사항 적용<br>
+        sudo update-grub<br>
+        <br>
+        <h3>사용자 추가 및 비번 설정</h3>
+        문제: 새로운 사용자 추가하고 비번 설정 설명하시오<br>
+        설명: <br>
+        a. 새로운 사용자 추가<br>
+        sudo useradd -m newuser<br>
+        <br>
+        b. 비번 설정<br>
+        sudo passwd newuser<br>
+        <br>
+        <h3>네트워크 인터페이스 현재설정 확인</h3>
+        ifconfig<br>
+        <br>
+        <h3>특정 IP에 핑</h3>
+        ping 192.168.1.1<br>
+        <br>
+        <h3>LVM 설정 및 관리</h3>
+        문제: LVM을 사용하여 논리볼륨을 생성하고 확장하는 법을 설명하시오<br>
+        설명: <br>
+        a.물리볼륨 생성<br>
+        sudo pvcreate /dev/sdx1<br>
+        <br>
+        b. 볼륨 그룹 생성<br>
+        sudo vgdreate myvg /dev/sdx1<br>
+        <br>
+        c. 논리볼륨 생성<br>
+        sudo lvcreate -n mylv -L 10G myvg<br>
+        <br>
+        d. 논리볼륨 확장<br>
+        sudo lvextend -L +5G /dev/myvg/mylv<br>
+        <br>
+        e. 파일시스템 확장<br>
+        sudo resize2fs /dev/myvg/mylv<br>
+        <br>
+        <h3>파일 시스템 생성 및 마운트</h3>
+        문제: ext4 파일 시스템을 생성하고 마운트하는 법 설명<br>
+        설명: <br>
+        a. ext4 파일 생성<br>
+        sudo mkfs.ext4 /dev/sdx1<br>
+        <br>
+        b. 파일 시스템을 마운트<br>
+        sudo mount /dev/sdx1 /mnt<br>
+        <br>
+        <hr>
+        <br>
+    </div>
+    <form style="margin-left: 10%;">
+        <input type="button" class="button" value="처음으로" onclick="location.href='index.html'">
+    </form>
+</body>
+</html>
