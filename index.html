@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="all.css" rel="stylesheet">
     <title>CBT</title>
-    <script src="L2-2.js"> </script>
+    <script src="L2-2.js"></script>
 </head>
 <body>
     <div class="Box">
@@ -14,10 +14,17 @@
         <br>
         과목을 선택하세요<br>
         <form>
-            <select class="button">
-            <option value="1">리눅스마스터(2-2)</option>
-            <option value="2">리눅스마스터(1-1)X</option>
-            <option value="3">리눅스마스터(1-2)X</option>
+            <select class="button" id="main-select" onchange="if(this.value == '1') updateOptions();">
+                <option value="0">Select an option</option>
+                <option value="1">리눅스마스터(2-2)</option>
+                <option value="2">리눅스마스터(1-1)X</option>
+                <option value="3">리눅스마스터(1-2)X</option>
+            </select>
+        </form>
+        <br>
+        <form>
+            <select id="linux2-options" class="button" style="display:none;">
+                <option value="">Select a date</option>
             </select>
         </form>
         <br>

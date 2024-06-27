@@ -1,15 +1,67 @@
-        // HTML 파일 경로 (절대 경로 또는 상대 경로 사용 가능)
-        const htmlFiles = [];
+const filesMap = {
+    "2023": [],
+    "2024": [],
+    "2022X": []
+};
 
-        for (var i = 1; i <= 14; i++) {
-            htmlFiles.push('Linux2-2-' + i + '.html');
-        }
+// Populate the filesMap with the appropriate file names
+for (var i = 1; i <= 3; i++) {
+    filesMap["2023"].push('L2-20230912/Linux23.12.09-' + i + '.html');
+}
+
+for (var i = 1; i <= 3; i++) {
+    filesMap["2022X"].push('' + i + '.html');
+}
+
+for (var i = 1; i <= 3; i++) {
+    filesMap["2024"].push('' + i + '.html');
+}
+
+
+function updateOptions() {
+    const selectBox = document.getElementById("linux2-options");
+    selectBox.innerHTML = '';
+
+    const option = document.createElement("option");
+    option.text = "Select a date";
+    option.value = "";
+    selectBox.add(option);
+
+    const years = Object.keys(filesMap);
+    years.forEach(year => {
+        const opt = document.createElement("option");
+        opt.value = year;
+        opt.text = year;
+        selectBox.add(opt);
+    });
+
+    selectBox.style.display = "inline";
+}
+
+function RandomHTML() {
+    const selectedYear = document.getElementById("linux2-options").value;
+    if (selectedYear && filesMap[selectedYear]) {
+        const files = filesMap[selectedYear];
+        const randomIndex = Math.floor(Math.random() * files.length);
+        const selectedHTMLFile = files[randomIndex];
+        window.location.href = selectedHTMLFile;
+    } else {
+        alert("날짜를 선택하세요");
+    }
+}
+
+function Next(){
+    if (window.location.href.includes('2023')) {
+        // 현재 파일이 "리눅스 2 2023"인 경우 실행할 코드
         
-        function RandomHTML() {
-            // 랜덤 HTML 파일 선택
-            const randomIndex = Math.floor(Math.random() * htmlFiles.length);
-            const selectedHTMLFile = htmlFiles[randomIndex];
-    
-            // 선택된 HTML 파일로 이동
-            window.location.href = selectedHTMLFile;
+        const files = []; 
+        for (var i = 1; i <= 3; i++) { 
+            files.push('Linux23.12.09-' + i + '.html');
         }
+
+        const randomIndex = Math.floor(Math.random() * files.length);
+        const selectedHTMLFile = files[randomIndex];
+        window.location.href = selectedHTMLFile;
+    } 
+
+}
