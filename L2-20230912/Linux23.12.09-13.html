@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../all.css" rel="stylesheet">
+    <title>CBT</title>
+    <script src="../L2-2.js"> </script>
+</head>
+<body>
+    <div class="Box">
+    문제<br>
+    <br>28. 다음 중 사용자가 본인이 실행한 백그라운드 목록을 확인하는 명령어로 가장 알맞은 것은?<br>
+    <br>
+    <hr>
+    <br>
+    <form>
+        1번: ps<input type ="radio" name="answer" value="1"><br>
+        2번: bg<input type ="radio" name="answer" value="2"><br>
+        3번: jobs<input type ="radio" name="answer" value="3"><br>
+        4번: exec<input type ="radio" name="answer" value="4"><br>
+    <br>
+    <input type="button" class="button" value="정답" onclick="jd()">
+    <input type="button" class="button" value="다음" onclick="Next()">
+    <input type="button" class="button" value="해설" onclick="hs()"><br>
+    <br>
+    <a id="hs"></a>
+    <a id="jd"></a>
+    </form>
+    </div>
+    <form style="margin-left: 10%;">
+        <input type="button" class="button" value="처음으로" onclick="location.href='../index.html'">
+    </form>
+    <br>
+</body>
+<script>
+function hs()
+{
+    const hs = document.getElementById('hs'); //hs아이디에 inner안에 HTML코드를 적용한다. 
+    hs.innerHTML = '해설: ps: 현재 실행 중인 전체 프로세스 확인<br>bg: 백그라운드에서 작업 실행<br>fg: 포그라운드에서 작업 실행<br>jobs: 현재 *셸*에서 실행 중인 작업의 목록<br>exec: 셸 스크립트가 다른 프로세스로 대체<br>top: 실시간으로 프로세스 목록을 출력합니다.<br>kill: 프로세스를 종료합니다.<br>pwd: 현재 작업중인 디렉토리 경로 출력<br>ls: 현재 디렉토리 파일 및 디렉토리 목록 모두 출력<br>cd: 디렉토리 변경(이동)<br>mkdir: 새 디렉토리를 생성<br>rmdir: 빈 디렉토리를 삭제<br>cp: 파일 또는 디렉토리 복사<br>mv: 파일 또는 디렉토리 이동하거나 이름 변경<br>rm: 파일 삭제<bt>touch: 새 파일 생성 또는 기존 파일 수정 시간 변경<br>cat: 파일의 내용 출력<br>more: 파일의 내용을 페이지 단위로 출력<br>less: more와 비슷하지만 더 많은 기능 제공<br>head: 파일의 처음 몇 줄 출력<br>tail: 파일의 마지막 몇 줄 출력<br>'; // innerHTML 사용
+}
+
+function jd()
+{
+    const a = document.querySelector('input[name="answer"]:checked').value;
+    const b = '1'; 
+
+    if (a === b) {
+        alert('정답입니다!');
+    } else {
+        alert('오답입니다.');
+    }
+
+    const jd = document.getElementById('jd');
+    jd.innerHTML = '정답: 1. ps(현재 실행 중인 프로세스 목록을 확인)<br>'; // innerHTML 사용
+}
+</script>
+</html>

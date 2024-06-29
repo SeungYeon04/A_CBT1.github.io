@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../all.css" rel="stylesheet">
+    <title>CBT</title>
+    <script src="../L2-2.js"> </script>
+</head>
+<body>
+    <div class="Box">
+    문제<br>
+    <br>25. 다음 명령의 결과에 대한 설명으로 알맞은 곳은?<br>
+    <br>    
+    <div class="textnemo">
+        nice bash<br>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <form>
+        1번: bash 프로세스의 우선순위를 높인다.<input type ="radio" name="answer" value="1"><br>
+        2번: bash 프로세스의 우선순위를 낮춘다.<input type ="radio" name="answer" value="2"><br>
+        3번: bash 프로세스의 우선순위 값을 출력한다.<input type ="radio" name="answer" value="3"><br>
+        4번: 사용법 오류로 인해 실행되지 않는다.<input type ="radio" name="answer" value="4"><br>
+    <br>
+    <input type="button" class="button" value="정답" onclick="jd()">
+    <input type="button" class="button" value="다음" onclick="Next()">
+    <input type="button" class="button" value="해설" onclick="hs()"><br>
+    <br>
+    <a id="hs"></a>
+    <a id="jd"></a>
+    </form>
+    </div>
+    <form style="margin-left: 10%;">
+        <input type="button" class="button" value="처음으로" onclick="location.href='../index.html'">
+    </form>
+    <br>
+</body>
+<script>
+function hs()
+{
+    const hs = document.getElementById('hs'); //hs아이디에 inner안에 HTML코드를 적용한다. 
+    hs.innerHTML = '해설: nice bash 명령어 쓰면, 현재 사용자가 실행하는<br>bash 셸의 프로세스에 대한 nice 값이 기본적으로 10 증가<br>Nice 값이 증가하면 프로세스의 우선순위가 낮아지므로, 해당 프로세스는 낮은 우선순위로 실행.<br>'; // innerHTML 사용
+}
+
+function jd()
+{
+    const a = document.querySelector('input[name="answer"]:checked').value;
+    const b = '2'; 
+
+    if (a === b) {
+        alert('정답입니다!');
+    } else {
+        alert('오답입니다.');
+    }
+
+    const jd = document.getElementById('jd');
+    jd.innerHTML = '정답: 2. bash 프로세스 우선순위 낮춤. nice 값 10 증가해서 프로세스 우선순위 낮아짐.<br>'; // innerHTML 사용
+}
+</script>
+</html>

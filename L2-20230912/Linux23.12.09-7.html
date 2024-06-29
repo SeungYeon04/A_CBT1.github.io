@@ -10,23 +10,19 @@
 <body>
     <div class="Box">
     문제<br>
-    <br>5. 다음 중 LVM 구성할 때 가장 먼저 생성되는 것은?<br>
+    <br>10. 다음은 다운로드 받은 소스파일 내용만을 확인하는 과정이다.<br>()안에 들어갈 내용을 알맞은 것은?<br>
     <br>
     <div class="textnemo">
-        리눅스 및 유닉스 계열 운영체제에서<br>
-        사운드를 만들고 캡처하는 인터페이스로 표준 유닉스<br>
-        시스템 콜(POSIX)에 기반을 두고 있다.<br>
-        프로젝트 초기에는 Free Software이었으나<br>
-        사유화 되기도 했다.<br>
+        tar () php-8.2.7.tar.bz2<br>
     </div>
     <br>
     <hr>
     <br>
     <form>
-        1번: ALSA<input type ="radio" name="answer" value="1"><br>
-        2번: CUPS<input type ="radio" name="answer" value="2"><br>
-        3번: SANE<input type ="radio" name="answer" value="3"><br>
-        4번: OSS<input type ="radio" name="answer" value="4"><br>
+        1번: jxvf<input type ="radio" name="answer" value="1"><br>
+        2번: Jxvf<input type ="radio" name="answer" value="2"><br>
+        3번: jtvf<input type ="radio" name="answer" value="3"><br>
+        4번: Jtvf<input type ="radio" name="answer" value="4"><br>
     <br>
     <input type="button" class="button" value="정답" onclick="jd()">
     <input type="button" class="button" value="다음" onclick="Next()">
@@ -45,13 +41,13 @@
 function hs()
 {
     const hs = document.getElementById('hs');
-    hs.innerHTML = '해설: 사운드 관련은 OSS와 ALSA.<br>("표준 유닉스 시스템 콜" 나오면 OSS)<br>'; // innerHTML 사용
+    hs.innerHTML = '해설: .xz = J(Jxvf)<br>.bz2 = j(jxvf)<br>.gz = z(zxvf)<br>compress = Z(Zxvf)<br><br>이하 tar 옵션<br>c: 압축파일생성<br>x: 압축파일 해제<br>t: 아카이브 내의 파일 목록 보기<br>v: 자세한 정보 출력<br>f: 파일 이름 및 디렉토리 지정<br>'; // innerHTML 사용
 }
 
 function jd()
 {
     const a = document.querySelector('input[name="answer"]:checked').value;
-    const b = '4'; 
+    const b = '3'; 
 
     if (a === b) {
         alert('정답입니다!');
@@ -60,7 +56,7 @@ function jd()
     }
 
     const jd = document.getElementById('jd');
-    jd.innerHTML = '정답: 4. OSS<br>'; // innerHTML 사용
+    jd.innerHTML = '정답: 3. bz2는 j<br>'; // innerHTML 사용
 }
 </script>
 </html>
