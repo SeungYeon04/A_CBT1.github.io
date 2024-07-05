@@ -1,12 +1,12 @@
 const filesMap = {
-    "2023": [],
-    "2024": [],
-    "2022X": []
+    "2023-12-09": [],
+    "2022X": [],
+    "2023X": []
 };
 
 // Populate the filesMap with the appropriate file names
-for (var i = 1; i <= 3; i++) {
-    filesMap["2023"].push('L2-20230912/Linux23.12.09-' + i + '.html');
+for (var i = 1; i <= 13; i++) {
+    filesMap["2023-12-09"].push('L2-20231209/Linux' + i + '.html');
 }
 
 for (var i = 1; i <= 3; i++) {
@@ -14,7 +14,7 @@ for (var i = 1; i <= 3; i++) {
 }
 
 for (var i = 1; i <= 3; i++) {
-    filesMap["2024"].push('' + i + '.html');
+    filesMap["2023X"].push('' + i + '.html');
 }
 
 
@@ -55,8 +55,8 @@ function Next(){
         // 현재 파일이 "리눅스 2 2023"인 경우 실행할 코드
         
         const files = []; 
-        for (var i = 1; i <= 3; i++) { 
-            files.push('Linux23.12.09-' + i + '.html');
+        for (var i = 1; i <= 13; i++) { 
+            files.push('Linux' + i + '.html');
         }
 
         const randomIndex = Math.floor(Math.random() * files.length);

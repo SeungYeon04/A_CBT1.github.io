@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../all.css" rel="stylesheet">
+    <title>CBT</title>
+    <script src="../L2-2.js"> </script>
+</head>
+<body>
+    <div class="Box">
+<h3>시그널 종류</h3>
+<h4>주요 시그널</h4>
+SIGHUP (1): 터미널 행업<br>
+SIGINT (2): 인터럽트 (Ctrl+C)<br>
+SIGQUIT (3): 종료 (Ctrl+)<br>
+SIGILL (4): 불법 명령<br>
+SIGTRAP (5): 트랩 (디버거)<br>
+SIGABRT (6): 종료 (abort 함수 호출)<br>
+SIGBUS (7): 버스 오류<br>
+SIGFPE (8): 부동 소수점 예외<br>
+SIGKILL (9): 강제 종료<br>
+SIGUSR1 (10): 사용자 정의 시그널 1<br>
+SIGSEGV (11): 잘못된 메모리 참조<br>
+SIGUSR2 (12): 사용자 정의 시그널 2<br>
+SIGPIPE (13): 파이프 끊김<br>
+SIGALRM (14): 알람 시그널<br>
+SIGTERM (15): 종료<br>
+SIGSTKFLT (16): 스택 오류<br>
+SIGCHLD (17): 자식 프로세스 상태 변경<br>
+SIGCONT (18): 일시 중지된 프로세스 계속<br>
+SIGSTOP (19): 일시 중지<br>
+SIGTSTP (20): 터미널 일시 중지 (Ctrl+Z)<br>
+SIGTTIN (21): 터미널 입력 시도<br>
+SIGTTOU (22): 터미널 출력 시도<br>
+SIGURG (23): 긴급 소켓 조건<br>
+SIGXCPU (24): CPU 시간 초과<br>
+SIGXFSZ (25): 파일 크기 초과<br>
+SIGVTALRM (26): 가상 타이머 만료<br>
+SIGPROF (27): 프로파일 타이머 만료<br>
+SIGWINCH (28): 윈도우 크기 변경<br>
+SIGIO (29): I/O 가능<br>
+SIGPWR (30): 전원 실패<br>
+SIGSYS (31): 잘못된 시스템 호출<br>
+<h4>확장 시그널 (플랫폼에 따라 다름)</h4>
+SIGRTMIN (32): 실시간 시그널 시작<br>
+SIGRTMAX (63): 실시간 시그널 끝<br>
+<h3>시그널 설명</h3>
+SIGHUP (1): 터미널 연결이 끊어졌을 때 발생.<br>
+SIGINT (2): 사용자 인터럽트, 주로 Ctrl+C 입력 시 발생.<br>
+SIGQUIT (3): 종료 시그널, Ctrl+\ 입력 시 발생하며, 코어 덤프 생성.<br>
+SIGILL (4): 불법 명령이 실행될 때 발생.<br>
+SIGTRAP (5): 디버거가 중단점을 만나거나 트랩을 발생시킬 때.<br>
+SIGABRT (6): abort 함수 호출 시 발생.<br>
+SIGBUS (7): 버스 오류, 잘못된 메모리 접근 시 발생.<br>
+SIGFPE (8): 부동 소수점 예외 발생 시.<br>
+SIGKILL (9): 프로세스 강제 종료, 무시할 수 없음.<br>
+SIGUSR1 (10) 및 SIGUSR2 (12): 사용자 정의 시그널, 사용자가 정의한 용도로 사용.<br>
+SIGSEGV (11): 잘못된 메모리 참조 (세그먼트 오류).<br>
+SIGPIPE (13): 파이프 끊김, 파이프에 쓰기 시 읽는 쪽이 종료된 경우.<br>
+SIGALRM (14): 알람 시그널, alarm 함수로 설정된 타이머 만료 시 발생.<br>
+SIGTERM (15): 프로세스 종료 요청.<br>
+SIGSTKFLT (16): 스택 오류.<br>
+SIGCHLD (17): 자식 프로세스 상태 변경 시 부모 프로세스에 알림.<br>
+SIGCONT (18): 일시 중지된 프로세스를 계속 실행.<br>
+SIGSTOP (19): 프로세스를 일시 중지, 무시할 수 없음.<br>
+SIGTSTP (20): 터미널 일시 정지, Ctrl+Z 입력 시 발생.<br>
+SIGTTIN (21): 백그라운드 프로세스가 터미널 입력 시도 시.<br>
+SIGTTOU (22): 백그라운드 프로세스가 터미널 출력 시도 시.<br>
+SIGURG (23): 긴급 소켓 조건 발생 시.<br>
+SIGXCPU (24): 프로세스가 할당된 CPU 시간을 초과할 때.<br>
+SIGXFSZ (25): 프로세스가 파일 크기 제한을 초과할 때.<br>
+SIGVTALRM (26): 가상 타이머 만료 시.<br>
+SIGPROF (27): 프로파일 타이머 만료 시.<br>
+SIGWINCH (28): 윈도우 크기 변경 시.<br>
+SIGIO (29): I/O 이벤트 발생 시.<br>
+SIGPWR (30): 전원 실패 발생 시.<br>
+SIGSYS (31): 잘못된 시스템 호출 시.<br>
+SIGRTMIN (32)부터 SIGRTMAX (63): 실시간 시그널.<br>
+<br>
+</div>
+<form style="margin-left: 10%;">
+    <input type="button" class="button" value="처음으로" onclick="location.href='../index.html'">
+</form>
+</body>
+</html>
