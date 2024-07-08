@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../all.css" rel="stylesheet">
+    <title>CBT</title>
+    <script src="../L2-2.js"> </script>
+</head>
+<body>
+    <div class="Box">
+    문제<br>
+    <br>
+    22. 다음 중 kill 명령어를 실행할 때 전달되는 기본 시그널 명칭과 조합으로 알맞은 것은?<br>
+    <br>
+    <hr>
+    <br>
+    <form>
+        1번: SIGKILL, 9<input type ="radio" name="answer" value="1"><br>
+        2번: SIGKILL, 15<input type ="radio" name="answer" value="2"><br>
+        3번: SIGTERM, 9<input type ="radio" name="answer" value="3"><br>
+        4번: SIGTERM, 15<input type ="radio" name="answer" value="4"><br>
+    <br>
+    <input type="button" class="button" value="정답" onclick="jd()">
+    <input type="button" class="button" value="다음" onclick="Next()">
+    <input type="button" class="button" value="해설" onclick="hs()"><br>
+    <br>
+    <a id="hs"></a>
+    <a id="jd"></a>
+    </form>
+    </div>
+    <form style="margin-left: 10%;">
+        <input type="button" class="button" value="처음으로" onclick="location.href='../index.html'">
+    </form>
+    <br>
+</body>
+<script>
+function hs()
+{
+    const hs = document.getElementById('hs');
+    hs.innerHTML = '해설: 1. SIGKILL(9)<br>발생조건: 프로세스강제종료<br>기본동작: 종료<br>2. SIGTERM(15)<br>발생조건: kill시스템 호출 시 발생<br>기본동작: 종료<br>'; // innerHTML 사용
+}
+
+function jd()
+{
+    const a = document.querySelector('input[name="answer"]:checked').value;
+    const b = '4'; 
+
+    if (a === b) {
+        alert('정답입니다!');
+    } else {
+        alert('오답입니다.');
+    }
+
+    const jd = document.getElementById('jd') ;
+    jd.innerHTML = '정답: 4. kill하면 SIGTERM(15번) 시그널 됨.<br>'; // innerHTML 사용
+} 
+</script>
+</html>

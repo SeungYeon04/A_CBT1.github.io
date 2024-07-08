@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../all.css" rel="stylesheet">
+    <title>CBT</title>
+    <script src="../L2-2.js"> </script>
+</head>
+<body>
+    <div class="Box">
+    문제<br>
+    <br>
+    16. 다음 () 안에 들어갈 파일명으로 알맞은 것은?<br>
+    <br>
+    <div class="textnemo">
+        사용자가 로그인한 후에 입력한 명령들은<br>
+        로그아웃 할 때 사용자의 홈 디렉터리 안에 있는<br>
+        () 파일에 저장된다.<br>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <form>
+        1번: bash_profile<input type ="radio" name="answer" value="1"><br>
+        2번: bash_history<input type ="radio" name="answer" value="2"><br>
+        3번: .bash_profile<input type ="radio" name="answer" value="3"><br>
+        4번: .bash_history<input type ="radio" name="answer" value="4"><br>
+    <br>
+    <input type="button" class="button" value="정답" onclick="jd()">
+    <input type="button" class="button" value="다음" onclick="Next()">
+    <input type="button" class="button" value="해설" onclick="hs()"><br>
+    <br>
+    <a id="hs"></a>
+    <a id="jd"></a>
+    </form>
+    </div>
+    <form style="margin-left: 10%;">
+        <input type="button" class="button" value="처음으로" onclick="location.href='../index.html'">
+    </form>
+    <br>
+</body>
+<script>
+function hs()
+{
+    const hs = document.getElementById('hs');
+    hs.innerHTML = '해설: 입력한 명령은 history<br>홈 디렉토리 쉘 히스토리는 숨겨진 파일이라 앞에 점이 붙음.<br>쉘 히스토리 이름은 .bash_history .zsh_history .fish_histiry 등 숨겨진 파일 이름을 가집니다.<br>'; // innerHTML 사용
+}
+
+function jd()
+{
+    const a = document.querySelector('input[name="answer"]:checked').value;
+    const b = '4'; 
+
+    if (a === b) {
+        alert('정답입니다!');
+    } else {
+        alert('오답입니다.');
+    }
+
+    const jd = document.getElementById('jd') ;
+    jd.innerHTML = '정답: 4. .bash_history (숨겨진 히스토리)<br>'; // innerHTML 사용
+} 
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../all.css" rel="stylesheet">
+    <title>CBT</title>
+    <script src="../L2-2.js"> </script>
+</head>
+<body>
+    <div class="Box">
+    문제<br>
+    <br>
+    17. ls명령으로 에일리어스(alias)가 설정된 상태에서<br>원래의 ls명령어를 실행하려고 한다.<br>다음 중 관련 설명으로 알맞은 것은?<br>
+    <br>
+    <hr>
+    <br>
+    <form>
+        1번: ls 앞에 ! 붙여서 실행<input type ="radio" name="answer" value="1"><br>
+        2번: ls 앞에 $ 붙여서 실행<input type ="radio" name="answer" value="2"><br>
+        3번: ls 앞에 \(원화) 붙여서 실행<input type ="radio" name="answer" value="3"><br>
+        4번: ls 앞에 / 붙여서 실행<input type ="radio" name="answer" value="4"><br>
+    <br>
+    <input type="button" class="button" value="정답" onclick="jd()">
+    <input type="button" class="button" value="다음" onclick="Next()">
+    <input type="button" class="button" value="해설" onclick="hs()"><br>
+    <br>
+    <a id="hs"></a>
+    <a id="jd"></a>
+    </form>
+    </div>
+    <form style="margin-left: 10%;">
+        <input type="button" class="button" value="처음으로" onclick="location.href='../index.html'">
+    </form>
+    <br>
+</body>
+<script>
+function hs()
+{
+    const hs = document.getElementById('hs');
+    hs.innerHTML = '해설: ls 앞에 (원화 슬래시) 붙여서 실행<br>'; // innerHTML 사용
+}
+
+function jd()
+{
+    const a = document.querySelector('input[name="answer"]:checked').value;
+    const b = '3'; 
+
+    if (a === b) {
+        alert('정답입니다!');
+    } else {
+        alert('오답입니다.');
+    }
+
+    const jd = document.getElementById('jd') ;
+    jd.innerHTML = '정답: 3.  ls 앞에 (원화) 붙여서 실행<br>'; // innerHTML 사용
+} 
+</script>
+</html>
